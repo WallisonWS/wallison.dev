@@ -27,8 +27,7 @@ export async function InvokeLLM(options: {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "Bearer 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",
+        Authorization: process.env.OPENAI_API_KEY || "YOUR_API_KEY",
       },
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
