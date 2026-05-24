@@ -54,11 +54,17 @@ const MatrixRain = () => {
 
 export default function CyberHologram() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const terminalInputRef = useRef<HTMLInputElement>(null)
   const [hovered, setHovered] = useState(false)
   const [shieldPulse, setShieldPulse] = useState(false)
   const [matrixActive, setMatrixActive] = useState(false)
   const [terminalInput, setTerminalInput] = useState("")
+  const [terminalFocused, setTerminalFocused] = useState(false)
   const [activeTab, setActiveTab] = useState(0)
+
+  const focusTerminal = () => {
+    terminalInputRef.current?.focus()
+  }
   
   // Terminal console lines history
   const [cliLines, setCliLines] = useState<string[]>([
@@ -433,12 +439,23 @@ export default function CyberHologram() {
 
           {/* Layer 7: Interactive Terminal Output Window (Z: 100px) */}
           <motion.div
+            onClick={(e) => {
+              e.stopPropagation()
+              focusTerminal()
+            }}
             className={`absolute w-[250px] bg-gray-950/92 border rounded-lg shadow-2xl backdrop-blur-lg z-30 transition-all duration-300 ${
-              shieldPulse ? "border-cyan-400/80 shadow-[0_0_25px_rgba(6,182,212,0.3)]" : "border-blue-500/50"
+              terminalFocused
+                ? "border-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.3)] scale-[1.02]"
+                : shieldPulse 
+                  ? "border-cyan-400/80 shadow-[0_0_25px_rgba(6,182,212,0.3)]" 
+                  : "border-blue-500/50"
             }`}
             style={{ 
               transform: "translateZ(100px) translateY(105px)",
-              boxShadow: "0 20px 40px rgba(0,0,0,0.6), 0 0 15px rgba(59,130,246,0.15)",
+              boxShadow: terminalFocused 
+                ? "0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(34,211,238,0.3)" 
+                : "0 20px 40px rgba(0,0,0,0.6), 0 0 15px rgba(59,130,246,0.15)",
+              cursor: "text"
             }}
             animate={{ y: [0, -4, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
@@ -479,18 +496,26 @@ export default function CyberHologram() {
             </div>
 
             {/* Command input form */}
-            <div className="border-t border-blue-500/30 p-1.5 flex gap-1.5 items-center bg-gray-950/95 rounded-b-lg relative z-40">
+            <div className={`border-t p-1.5 flex gap-1.5 items-center bg-gray-950/95 rounded-b-lg relative z-40 transition-all duration-300 ${
+              terminalFocused 
+                ? "border-cyan-400/60 shadow-[inset_0_0_10px_rgba(34,211,238,0.15)] bg-cyan-950/10" 
+                : "border-blue-500/30"
+            }`}>
               <span className="text-[8px] font-mono text-cyan-400 pl-1">FGT #</span>
               <input
+                ref={terminalInputRef}
                 type="text"
                 value={terminalInput}
                 onChange={(e) => setTerminalInput(e.target.value)}
                 onKeyDown={handleKeyDown}
+                onFocus={() => setTerminalFocused(true)}
+                onBlur={() => setTerminalFocused(false)}
                 placeholder="digite help, status, matrix..."
                 className="bg-transparent border-none text-[8px] font-mono text-white placeholder-gray-600 focus:outline-none focus:ring-0 flex-1 w-full pl-0.5"
               />
               <button 
-                onClick={() => {
+                onClick={(e) => {
+                  e.stopPropagation()
                   executeCommand(terminalInput)
                   setTerminalInput("")
                 }}

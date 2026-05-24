@@ -206,6 +206,30 @@ export default function PortfolioContainer() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse-subtle" />
         <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none -z-10" />
 
+        {/* 3D Cyberpunk Scrolling Grid Floor */}
+        <motion.div 
+          className="absolute inset-x-0 bottom-0 h-[45vh] pointer-events-none -z-10"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, rgba(6,182,212,0.07) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(6,182,212,0.07) 1px, transparent 1px)
+            `,
+            backgroundSize: "60px 60px",
+            transform: "perspective(500px) rotateX(65deg)",
+            transformOrigin: "bottom",
+            maskImage: "linear-gradient(to top, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 80%)",
+            WebkitMaskImage: "linear-gradient(to top, rgba(0,0,0,1) 15%, rgba(0,0,0,0) 80%)",
+          }}
+          animate={{
+            backgroundPositionY: ["0px", "60px"]
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+
         <div className="max-w-6xl mx-auto w-full px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center z-10">
           <motion.div style={{ opacity, y }} className="md:col-span-7 text-center md:text-left space-y-6">
             <motion.h1
