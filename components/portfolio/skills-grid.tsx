@@ -123,10 +123,9 @@ const skills = [
     description: "Gerenciamento de centrais telefônicas IP baseadas em Asterisk, ramais SIP, troncos de telecomunicações e manutenção de servidores VoIP.",
     animation: {
       hover: { scale: 1.05 },
+    },
   },
 ]
-
-export default function SkillsGrid() {
 
 export default function SkillsGrid() {
   const [hoveredSkill, setHoveredSkill] = useState(null)
