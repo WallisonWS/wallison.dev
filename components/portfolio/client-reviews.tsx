@@ -36,7 +36,7 @@ const clientReviews = [
     name: "Dr. Roberto Silveira",
     avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&auto=format&fit=crop&q=80",
     role: "Diretor Executivo",
-    company: "Associação Educacional ABC",
+    company: "Grupo Educacional Vanguarda",
     date: "Março 2024",
     rating: 5,
     project: "Arquitetura de Rede Zero-Trust e VLANs",
@@ -51,7 +51,7 @@ const clientReviews = [
     name: "Profa. Eliane Souza",
     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
     role: "Coordenadora Geral",
-    company: "Colégio Central Adventista",
+    company: "Colégio Integral Conexão",
     date: "Janeiro 2024",
     rating: 5,
     project: "Integração e Suporte de Sistemas CPB & E-Class",
@@ -71,7 +71,7 @@ const clientReviews = [
     rating: 5,
     project: "Automação de Backups e Scripts CLI",
     review:
-      "O que destaca o Wallison é sua habilidade em mesclar infraestrutura com automação. Ele desenvolveu scripts em Python e workflows no GitHub Actions que realizam backups automatizados diários dos switches Aruba e firewalls da instituição. Ele elevou a administração de redes a um nível de excelência automatizada muito raro.",
+      "O que destaca o Wallison é sua habilidade em mesclar infraestrutura com automação. Ele desenvolveu scripts em Python e workflows no GitHub Actions que realizam backups automatizados diários dos switches Aruba e firewalls da rede. Ele elevou a administração de redes a um nível de excelência automatizada muito raro.",
     verified: true,
     highlight: "Automação brilhante com Python!",
     tech: ["Python", "PowerShell", "Aruba CLI", "GitHub Actions"]
