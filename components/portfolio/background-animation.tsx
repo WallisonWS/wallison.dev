@@ -37,15 +37,17 @@ export const BackgroundAnimation = ({ scrollY = 0, isDark = true }) => {
     const particleCount = 15 // Reduced for better performance
 
     const codeSnippets = [
-      "const App = () => <Component />",
-      "useEffect(() => { /* ... */ }, [])",
-      "import { useState } from 'react'",
-      "export default function Page() {",
-      "<motion.div animate={{ opacity: 1 }} />",
-      "async function fetchData() {",
-      "const [state, setState] = useState(null)",
-      "return await prisma.findMany()",
-      "const router = useRouter()",
+      "config firewall address; edit 'Hikvision_NVR'",
+      "Set-ADUser -Identity 'wallison.araujo' -Enabled $true",
+      "ssh.connect(hostname='192.168.99.100', port=22)",
+      "vlan 99; name 'CFTV_Hikvision'; untagged 1-10",
+      "diagnose sniffer packet any 'host 192.168.10.15'",
+      "const App = () => <PortfolioContainer />",
+      "import { useState, useEffect } from 'react'",
+      "git commit -m 'feat: update threat intelligence feed'",
+      "Search-ADAccount -AccountInactive -UsersOnly",
+      "import 'package:flutter/material.dart'",
+      "pfctl -sr | grep 'block'",
     ]
 
     for (let i = 0; i < particleCount; i++) {

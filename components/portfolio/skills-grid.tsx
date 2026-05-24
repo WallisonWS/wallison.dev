@@ -3,133 +3,129 @@
 import { useState, useCallback, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-// Otimizado para melhor desempenho - menos animações complexas
-const skills = [
+// Otimizado para melhor desempenho - menos animações complexasconst skills = [
   {
-    name: "HTML5",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-    color: "#E34F26",
+    name: "FortiGate",
+    icon: "https://www.vectorlogo.zone/logos/fortinet/fortinet-icon.svg",
+    color: "#C00000",
     proficiency: "Avançado",
-    description: "Criação de estruturas web semânticas, acessibilidade ARIA e formulários avançados",
+    description: "Configuração de políticas Zero Trust, SD-WAN, SSL-VPN, Web Filter, roteamento inter-VLAN e Sniffer/Troubleshooting via CLI.",
     animation: {
       hover: { scale: 1.05 },
     },
   },
   {
-    name: "CSS3",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-    color: "#1572B6",
+    name: "Switches Aruba",
+    icon: "https://www.vectorlogo.zone/logos/hpe/hpe-icon.svg",
+    color: "#FF6600",
     proficiency: "Avançado",
-    description: "Layouts com Flexbox e Grid, animações, media queries e design responsivo",
+    description: "Provisionamento de portas (Access/Trunk), configuração de VLANs, Spanning-Tree (PortFast), LACP (Trunking) e gerência CLI.",
     animation: {
       hover: { scale: 1.05 },
     },
   },
   {
-    name: "JavaScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    color: "#F7DF1E",
+    name: "pfSense",
+    icon: "https://www.vectorlogo.zone/logos/pfsense/pfsense-icon.svg",
+    color: "#E27D34",
+    proficiency: "Avançado",
+    description: "Configuração de regras de firewall, NAT, OpenVPN/IPsec, controle de tráfego, pacotes de segurança (pfBlockerNG) e debug via Shell.",
+    animation: {
+      hover: { scale: 1.05 },
+    },
+  },
+  {
+    name: "Active Directory",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg",
+    color: "#0078D6",
+    proficiency: "Avançado",
+    description: "Administração de Domain Controllers, criação e auditoria de contas de usuário e computadores, gerenciamento de GPOs e automação AD.",
+    animation: {
+      hover: { scale: 1.05 },
+    },
+  },
+  {
+    name: "UniFi Wireless",
+    icon: "https://www.vectorlogo.zone/logos/ubnt/ubnt-icon.svg",
+    color: "#005FFF",
+    proficiency: "Avançado",
+    description: "Gerenciamento centralizado de Access Points (APs), isolamento de clientes em redes de visitantes e mapeamento de SSIDs para VLANs.",
+    animation: {
+      hover: { scale: 1.05 },
+    },
+  },
+  {
+    name: "XCP-ng",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xenproject/xenproject-original.svg",
+    color: "#00B2B2",
     proficiency: "Intermediário",
-    description: "ES6+, manipulação DOM, Promises, Fetch API e funções assíncronas",
+    description: "Administração de hipervisores Xen Project, provisionamento de VMs, redes virtuais isoladas e rotinas de backup de servidores.",
     animation: {
       hover: { scale: 1.05 },
     },
   },
   {
-    name: "React",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    name: "PowerShell",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powershell/powershell-original.svg",
+    color: "#53C1DE",
+    proficiency: "Avançado",
+    description: "Automação de rotinas de infraestrutura Windows Server, consultas via AD-Cmdlets e scripts para backup de configurações de rede.",
+    animation: {
+      hover: { scale: 1.05 },
+    },
+  },
+  {
+    name: "Python (NetDevOps)",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    color: "#3776AB",
+    proficiency: "Intermediário",
+    description: "Scripts em Python para automação de backup de firewalls via SSH (Paramiko/Netmiko) e coleta/tratamento de APIs de redes.",
+    animation: {
+      hover: { scale: 1.05 },
+    },
+  },
+  {
+    name: "Flutter",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg",
+    color: "#02569B",
+    proficiency: "Intermediário",
+    description: "Desenvolvimento de aplicativos móveis (Android/iOS) integrados a serviços locais e APIs para monitoramento e controle de TI.",
+    animation: {
+      hover: { scale: 1.05 },
+    },
+  },
+  {
+    name: "Next.js & React",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
     color: "#61DAFB",
     proficiency: "Intermediário",
-    description: "Hooks (useState, useEffect), Context API, componentes reutilizáveis e React Router",
-    animation: {
-      hover: { scale: 1.05 },
-      special: {
-        rotate: [0, 360],
-        transition: { duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
-      },
-    },
-  },
-  {
-    name: "Node.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    color: "#339933",
-    proficiency: "Básico",
-    description: "Express, criação de APIs RESTful, middleware e conexão com bancos de dados",
+    description: "Construção de aplicações web modernas, dashboards dinâmicos para visualização de logs de rede e painéis de controle de TI.",
     animation: {
       hover: { scale: 1.05 },
     },
   },
   {
-    name: "Bootstrap",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-    color: "#7952B3",
-    proficiency: "Avançado",
-    description: "Uso de componentes, grid system, customização de temas e templates responsivos",
-    animation: {
-      hover: { scale: 1.05 },
-    },
-  },
-  {
-    name: "Git",
+    name: "Git & GitHub",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     color: "#F05032",
     proficiency: "Intermediário",
-    description: "Controle de versão, branches, merges, resolução de conflitos e GitFlow",
+    description: "Controle de versão de scripts, documentação em markdown, gerenciamento de repositórios e automação via GitHub Actions.",
     animation: {
       hover: { scale: 1.05 },
     },
   },
   {
-    name: "MongoDB",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-    color: "#47A248",
-    proficiency: "Básico",
-    description: "Modelagem de dados NoSQL, CRUD operations e integrações com Node.js",
-    animation: {
-      hover: { scale: 1.05 },
-    },
-  },
-  {
-    name: "TypeScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-    color: "#3178C6",
-    proficiency: "Básico",
-    description: "Tipagem estática, interfaces, types e integração com React e Node.js",
-    animation: {
-      hover: { scale: 1.05 },
-    },
-  },
-  {
-    name: "MySQL",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    color: "#4479A1",
+    name: "Asterisk (VoIP)",
+    icon: "https://www.vectorlogo.zone/logos/asterisk/asterisk-icon.svg",
+    color: "#F39C12",
     proficiency: "Intermediário",
-    description: "Queries SQL, modelagem relacional, joins, funções agregadas e stored procedures",
+    description: "Gerenciamento de centrais telefônicas IP baseadas em Asterisk, ramais SIP, troncos de telecomunicações e manutenção de servidores VoIP.",
     animation: {
       hover: { scale: 1.05 },
-    },
-  },
-  {
-    name: "Figma",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-    color: "#F24E1E",
-    proficiency: "Básico",
-    description: "Visualização de design, extração de assets, protótipos interativos e specs",
-    animation: {
-      hover: { scale: 1.05 },
-    },
-  },
-  {
-    name: "Sass",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
-    color: "#CC6699",
-    proficiency: "Intermediário",
-    description: "Pré-processador CSS com variáveis, mixins, nesting e arquitetura de estilos modular",
-    animation: {
-      hover: { scale: 1.05 },
-    },
   },
 ]
+
+export default function SkillsGrid() {
 
 export default function SkillsGrid() {
   const [hoveredSkill, setHoveredSkill] = useState(null)
