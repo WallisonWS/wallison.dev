@@ -50,15 +50,15 @@ export default function BioSection() {
                 </div>
 
                 <p className="text-gray-300 mb-5 leading-relaxed">
-                  Olá! Sou o Wallison Araujo, profissional de TI com perfil júnior e híbrido, atuando tanto na administração prática de **infraestrutura de redes, servidores e cibersegurança** quanto no **desenvolvimento de sistemas (Web/Mobile)**.
+                  Olá! Sou o Wallison Araujo. Minha jornada profissional é definida pela paixão em conectar o mundo físico das redes de computadores com o universo lógico do desenvolvimento de software. Atuo no modelo híbrido, aplicando conceitos modernos de **NetDevOps** para transformar a estabilidade e a segurança de ambientes de TI corporativos em código limpo, eficiente e automatizado.
                 </p>
 
                 <p className="text-gray-300 mb-5 leading-relaxed">
-                  Atualmente trabalho como **Assistente de Informática / Técnico de TI** na *ABC Associação Brasil Central*. No meu dia a dia, gerencio ativamente equipamentos de redes e segurança física e virtual (switches Aruba, firewalls FortiGate/pfSense sob o conceito de **Zero Trust**, redes UniFi e servidores de virtualização XCP-ng).
+                  Atualmente, sou responsável pela infraestrutura de rede, servidores e cibersegurança da *ABC Associação Brasil Central*. No meu dia a dia operacional, gerencio switches Aruba, firewalls FortiGate 80F sob arquitetura **Zero Trust**, firewalls pfSense, redes Wi-Fi UniFi e servidores de virtualização XCP-ng. Minha missão é garantir alta disponibilidade de serviços críticos de forma segura e escalável.
                 </p>
 
                 <p className="text-gray-300 mb-5 leading-relaxed">
-                  Também sou encarregado pela operação de sistemas corporativos/escolares integrados (CPB, E-Class, SAD, SSE, AASI, CFE, APS, etc.) e pela documentação centralizada de infraestrutura no **Obsidian**, aplicando automações com scripts Python e PowerShell.
+                  Além da infraestrutura física e virtual, desenvolvo soluções modernas como desenvolvedor júnior utilizando React, Next.js, Flutter e Dart. Aplico scripts em Python e PowerShell para automatizar a gerência e o backup de equipamentos de rede, mantendo toda a documentação da infraestrutura viva, centralizada e organizada no **Obsidian**.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mt-6">

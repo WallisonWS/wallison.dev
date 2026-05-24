@@ -102,6 +102,25 @@ const MinimalistBot = ({ className = "", isActive = false, isWaving = false, isB
         }}
       />
 
+      {/* Laser Scanner Bar */}
+      <motion.line
+        x1="34"
+        x2="66"
+        stroke="#22d3ee"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        style={{ filter: "drop-shadow(0 0 4px #22d3ee)" }}
+        animate={{
+          y1: [33, 52, 33],
+          y2: [33, 52, 33],
+        }}
+        transition={{
+          duration: 2.2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
       {/* Olhos */}
       <motion.g
         animate={
@@ -500,8 +519,15 @@ Pergunta do usuário: `
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="mb-4"
           >
-            <Card className="w-80 sm:w-96 shadow-xl backdrop-blur-sm bg-gray-900/95 border-gray-700 border overflow-hidden">
-              <CardHeader className="p-4 border-b border-gray-800 bg-gradient-to-r from-violet-600/30 to-purple-600/30">
+            <Card className="w-80 sm:w-96 shadow-2xl backdrop-blur-md bg-gray-950/92 border-purple-500/30 border overflow-hidden rounded-2xl relative">
+              {/* Top Neon Light Line */}
+              <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-cyan-400 via-purple-500 to-violet-600" />
+
+              {/* Glowing Background Glows */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-cyan-500/5 blur-3xl pointer-events-none" />
+
+              <CardHeader className="p-4 border-b border-gray-900/80 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-violet-600/10">
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
                     <div className="h-8 w-8 flex items-center justify-center">
@@ -513,18 +539,18 @@ Pergunta do usuário: `
                       />
                     </div>
                     <div>
-                      <CardTitle className="text-base text-white">Assistente Virtual</CardTitle>
-                      <p className="text-xs text-blue-300">Online e pronto para ajudar! 💫</p>
+                      <CardTitle className="text-base text-white font-bold tracking-wide">Assistente Virtual</CardTitle>
+                      <p className="text-[10px] text-cyan-300 font-mono">ONLINE // PROTOCOLO_IA 💫</p>
                     </div>
                   </div>
-                  <Button variant="ghost" size="icon" onClick={toggleChat} className="text-gray-400 hover:text-white">
+                  <Button variant="ghost" size="icon" onClick={toggleChat} className="text-gray-400 hover:text-white rounded-lg">
                     <X className="h-4 w-4" />
                   </Button>
                 </div>
               </CardHeader>
 
               <CardContent className="p-0">
-                <div className="h-96 overflow-y-auto p-4 space-y-4 bg-gray-900/80 will-change-scroll">
+                <div className="h-96 overflow-y-auto p-4 space-y-4 bg-gray-950/40 will-change-scroll">
                   {messages.map((message, index) => (
                     <motion.div
                       key={index}
@@ -534,10 +560,10 @@ Pergunta do usuário: `
                       className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
                     >
                       <div
-                        className={`max-w-[85%] p-3 rounded-lg ${
+                        className={`max-w-[85%] p-3 rounded-xl shadow-md ${
                           message.role === "user"
-                            ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-tr-none"
-                            : "bg-gradient-to-r from-violet-800/90 to-purple-800/90 text-gray-100 rounded-tl-none border border-purple-700/50"
+                            ? "bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-tr-none"
+                            : "bg-gradient-to-r from-violet-950/80 to-purple-950/80 text-gray-100 rounded-tl-none border border-purple-900/50"
                         }`}
                       >
                         <div className="flex items-center gap-2 mb-1">
@@ -550,13 +576,13 @@ Pergunta do usuário: `
                               />
                             </div>
                           ) : (
-                            <User className="h-4 w-4 text-blue-200" />
+                            <User className="h-4 w-4 text-cyan-200" />
                           )}
-                          <span className="text-xs font-semibold">
+                          <span className="text-[10px] font-bold tracking-wide uppercase font-mono">
                             {message.role === "assistant" ? "Assistente" : "Você"}
                           </span>
                         </div>
-                        <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                        <p className="text-sm whitespace-pre-wrap leading-relaxed">{message.content}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -567,16 +593,16 @@ Pergunta do usuário: `
                       animate="animate"
                       className="flex justify-start"
                     >
-                      <div className="max-w-[85%] p-3 rounded-lg bg-gradient-to-r from-violet-800/90 to-purple-800/90 text-gray-100 rounded-tl-none border border-purple-700/50">
+                      <div className="max-w-[85%] p-3 rounded-xl bg-gradient-to-r from-violet-950/80 to-purple-950/80 text-gray-100 rounded-tl-none border border-purple-900/50">
                         <div className="flex items-center gap-2">
                           <div className="h-4 w-4 flex-shrink-0">
                             <MinimalistBot className="h-4 w-4" isWaving={true} isBlinking={true} isActive={true} />
                           </div>
-                          <span className="text-xs font-semibold">Assistente</span>
+                          <span className="text-[10px] font-bold tracking-wide uppercase font-mono">Assistente</span>
                         </div>
                         <div className="flex items-center gap-2 mt-2">
-                          <Loader2 className="h-4 w-4 animate-spin text-blue-400" />
-                          <span className="text-sm text-gray-300">Pensando na resposta... 💭</span>
+                          <Loader2 className="h-4 w-4 animate-spin text-cyan-400" />
+                          <span className="text-xs text-gray-400 font-mono">Processando dados... 💭</span>
                         </div>
                       </div>
                     </motion.div>
@@ -585,14 +611,14 @@ Pergunta do usuário: `
                 </div>
               </CardContent>
 
-              <CardFooter className="p-3 border-t border-gray-800 bg-gray-900">
+              <CardFooter className="p-3 border-t border-gray-900/80 bg-gray-950">
                 <form onSubmit={handleSendMessage} className="w-full flex gap-2">
                   <Textarea
                     ref={textareaRef}
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Digite sua mensagem..."
-                    className="resize-none min-h-10 max-h-24 bg-gray-800 border-gray-700 text-white focus:border-purple-500 focus:ring-1 focus:ring-purple-500"
+                    className="resize-none min-h-10 max-h-24 bg-gray-900 border-gray-800 text-white rounded-lg focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 text-sm placeholder:text-gray-500"
                     onKeyDown={(e) => {
                       if (e.key === "Enter" && !e.shiftKey) {
                         e.preventDefault()
@@ -606,7 +632,7 @@ Pergunta do usuário: `
                     type="submit"
                     disabled={isLoading || !input.trim()}
                     size="icon"
-                    className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white shadow-md"
+                    className="bg-gradient-to-r from-cyan-500 to-violet-600 hover:from-cyan-600 hover:to-violet-750 text-white shadow-lg rounded-lg h-10 w-10 flex-shrink-0"
                   >
                     <SendHorizonal className="h-4 w-4" />
                   </Button>
@@ -618,9 +644,9 @@ Pergunta do usuário: `
       </AnimatePresence>
 
       <motion.div
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="ml-auto"
+        whileHover={{ scale: 1.08 }}
+        whileTap={{ scale: 0.92 }}
+        className="ml-auto relative group"
         initial={false}
         onHoverStart={() => {
           setIsWaving(true)
@@ -632,14 +658,41 @@ Pergunta do usuário: `
           setTimeout(() => setIsActive(false), 2000)
         }}
       >
+        {/* Holographic Spinning Rings */}
+        {!isOpen && (
+          <>
+            {/* Outer Spinning Ring */}
+            <motion.div 
+              className="absolute -inset-3.5 rounded-full border border-dashed border-cyan-500/40 pointer-events-none"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+            />
+            {/* Inner Counter-Spinning Ring */}
+            <motion.div 
+              className="absolute -inset-2.5 rounded-full border border-dotted border-violet-500/50 pointer-events-none"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            />
+            {/* Pulsing Aura */}
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-cyan-500 to-violet-600 blur-md opacity-40 group-hover:opacity-75 transition-opacity duration-300 animate-pulse pointer-events-none" />
+          </>
+        )}
+
         <div
-          className="h-16 w-16 flex items-center justify-center cursor-pointer bg-gradient-to-br from-violet-500/90 to-purple-600/90 rounded-full shadow-lg shadow-purple-500/20"
+          className="h-16 w-16 flex items-center justify-center cursor-pointer bg-gray-950/85 backdrop-blur-md border border-purple-500/30 rounded-full shadow-2xl relative z-10 overflow-hidden"
           onClick={toggleChat}
+          style={{
+            boxShadow: "0 0 20px rgba(124, 58, 237, 0.3), inset 0 1px 15px rgba(255, 255, 255, 0.05)"
+          }}
         >
           {isOpen ? (
-            <X className="h-6 w-6 text-white" />
+            <X className="h-6 w-6 text-white animate-pulse" />
           ) : (
-            <MinimalistBot className="h-12 w-12" isWaving={isWaving} isBlinking={isBlinking} isActive={isActive} />
+            <>
+              {/* Scanline reflection overlay */}
+              <div className="absolute inset-0 bg-scanlines pointer-events-none opacity-5" />
+              <MinimalistBot className="h-12 w-12" isWaving={isWaving} isBlinking={isBlinking} isActive={isActive} />
+            </>
           )}
         </div>
       </motion.div>

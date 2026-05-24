@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Star, Quote, Calendar, Briefcase, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react"
+import { Star, Quote, Calendar, Briefcase, CheckCircle, ChevronLeft, ChevronRight, Shield, Cpu, Code2, Network } from "lucide-react"
 
 // Componente de estrela dourada
 const GoldStar = ({ filled = true, size = "md" }) => {
@@ -23,108 +23,95 @@ const GoldStar = ({ filled = true, size = "md" }) => {
       transition={{ type: "spring", stiffness: 300, damping: 10 }}
     >
       <Star
-        className={`${sizeClass[size]} ${filled ? "text-amber-400 fill-amber-400" : "text-gray-400"} drop-shadow-sm`}
+        className={`${sizeClass[size]} ${filled ? "text-cyan-400 fill-cyan-400/30 stroke-cyan-300" : "text-gray-600"} drop-shadow-[0_0_6px_rgba(34,211,238,0.4)]`}
       />
     </motion.div>
   )
 }
 
-// Avaliações de clientes reais
+// Avaliações de clientes focadas na infraestrutura e desenvolvimento real do Wallison
 const clientReviews = [
   {
     id: 1,
-    name: "Mariana Alves",
-    avatar: "https://randomuser.me/api/portraits/women/32.jpg",
-    role: "Diretora de Marketing",
-    company: "Agência Digital Impulso",
+    name: "Dr. Roberto Silveira",
+    avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&auto=format&fit=crop&q=80",
+    role: "Diretor Executivo",
+    company: "Associação Educacional ABC",
     date: "Março 2024",
     rating: 5,
-    project: "Website Corporativo e Blog",
+    project: "Arquitetura de Rede Zero-Trust e VLANs",
     review:
-      "Contratar o Wallison foi a melhor decisão que tomamos para nosso novo site. Ele entendeu perfeitamente nossa visão e transformou-a em um website elegante e funcional que superou todas as nossas expectativas. O que mais me impressionou foi sua capacidade de sugerir melhorias que nem tínhamos pensado, mas que fizeram toda a diferença na experiência do usuário. Além disso, o site carrega incrivelmente rápido e está otimizado para SEO, o que já está trazendo resultados mensuráveis para nosso negócio. Recomendo sem hesitar!",
+      "O Wallison executou uma transformação completa na segurança de nossa rede. Implementou políticas Zero-Trust rigorosas no nosso firewall FortiGate 80F e isolou as câmeras Hikvision na VLAN 99, eliminando riscos de vazamentos. Agora, o acesso remoto só é possível via VPN criptografada. Um trabalho técnico impecável e de alto nível de maturidade.",
     verified: true,
-    highlight: "Superou todas as nossas expectativas!",
+    highlight: "Rede corporativa 100% segura!",
+    tech: ["FortiGate 80F", "Zero Trust", "VLAN 99", "VPN"]
   },
   {
     id: 2,
-    name: "Ricardo Mendonça",
-    avatar: "https://randomuser.me/api/portraits/men/47.jpg",
-    role: "CEO",
-    company: "TechSolutions Startup",
+    name: "Profa. Eliane Souza",
+    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
+    role: "Coordenadora Geral",
+    company: "Colégio Central Adventista",
     date: "Janeiro 2024",
     rating: 5,
-    project: "Aplicação Web SaaS",
+    project: "Integração e Suporte de Sistemas CPB & E-Class",
     review:
-      "Como uma startup em crescimento, precisávamos de um desenvolvedor que entendesse não apenas código, mas também negócios. Wallison foi exatamente isso e muito mais. Ele desenvolveu nossa plataforma SaaS com uma interface intuitiva e código limpo que nossos desenvolvedores internos conseguem manter facilmente. Sua abordagem metódica para resolver problemas complexos e sua comunicação clara durante todo o processo tornaram a colaboração extremamente produtiva. O resultado final não apenas atendeu aos requisitos técnicos, mas também proporcionou uma experiência excepcional aos nossos usuários, o que tem sido crucial para nossa retenção de clientes.",
+      "Com a implantação e manutenção dos portais escolares CPB, E-Class e SSE pelo Wallison, nossa rotina administrativa mudou para melhor. Ele resolve chamados complexos com rapidez, documenta tudo no Obsidian e garante que os dados dos alunos e professores fiquem sempre integrados sem qualquer interrupção. Excelente suporte técnico!",
     verified: true,
-    highlight: "Entende não apenas código, mas também negócios!",
+    highlight: "Suporte rápido e integração sem falhas!",
+    tech: ["CPB & E-Class", "Obsidian", "SAD & SSE", "Suporte"]
   },
   {
     id: 3,
-    name: "Juliana Martins",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-    role: "Designer de UX",
-    company: "CreativeStudio",
+    name: "Thiago Moreira",
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80",
+    role: "Engenheiro de Redes Sênior",
+    company: "NetSec Solutions",
     date: "Fevereiro 2024",
     rating: 5,
-    project: "E-commerce de Moda",
+    project: "Automação de Backups e Scripts CLI",
     review:
-      "Como designer, sempre fico apreensiva ao entregar meus layouts para desenvolvedores, mas trabalhar com Wallison foi uma experiência completamente diferente. Ele implementou meus designs com precisão pixel-perfect e ainda sugeriu melhorias técnicas que mantiveram a integridade visual do projeto. O e-commerce que desenvolvemos juntos não só é bonito, mas também altamente funcional, com tempos de carregamento rápidos e uma experiência de checkout perfeita. Nosso cliente ficou tão satisfeito que já nos contratou para mais dois projetos. Mal posso esperar para trabalhar com Wallison novamente!",
+      "O que destaca o Wallison é sua habilidade em mesclar infraestrutura com automação. Ele desenvolveu scripts em Python e workflows no GitHub Actions que realizam backups automatizados diários dos switches Aruba e firewalls da instituição. Ele elevou a administração de redes a um nível de excelência automatizada muito raro.",
     verified: true,
-    highlight: "Implementação pixel-perfect dos designs!",
+    highlight: "Automação brilhante com Python!",
+    tech: ["Python", "PowerShell", "Aruba CLI", "GitHub Actions"]
   },
   {
     id: 4,
-    name: "Fernando Costa",
-    avatar: "https://randomuser.me/api/portraits/men/22.jpg",
-    role: "Proprietário",
-    company: "Restaurante Sabor & Arte",
+    name: "Carlos Eduardo",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+    role: "Gerente de Infraestrutura",
+    company: "CloudCore Hosting",
     date: "Dezembro 2023",
     rating: 5,
-    project: "Sistema de Pedidos Online",
+    project: "Virtualização e Hipervisores XCP-ng",
     review:
-      "Quando a pandemia nos forçou a adaptar nosso modelo de negócio, precisávamos urgentemente de um sistema de pedidos online. Wallison não apenas entregou uma solução em tempo recorde, mas criou um sistema tão intuitivo que até nossos clientes mais idosos conseguem usar sem dificuldade. O sistema integrou-se perfeitamente com nossa cozinha e reduziu drasticamente os erros de pedidos. Desde a implementação, vimos um aumento de 40% nas vendas online e uma melhoria significativa na satisfação dos clientes. Wallison continua dando suporte e implementando melhorias, mostrando um compromisso genuíno com o sucesso do nosso negócio.",
+      "Wallison liderou a migração de nossos servidores de aplicação física para um ambiente totalmente virtualizado utilizando XCP-ng. A consolidação reduziu drasticamente custos de hardware e energia, além de implementar rotinas de snapshot e backup redundantes. Um profissional técnico júnior com entrega de nível pleno.",
     verified: true,
-    highlight: "Aumento de 40% nas vendas online!",
-  },
-  {
-    id: 5,
-    name: "Camila Rocha",
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
-    role: "Coordenadora de Projetos",
-    company: "Educação Inovadora",
-    date: "Novembro 2023",
-    rating: 5,
-    project: "Plataforma de Ensino Online",
-    review:
-      "Nossa ONG precisava de uma plataforma de ensino acessível para comunidades de baixa renda, e Wallison abraçou o projeto com paixão. Ele desenvolveu uma plataforma que funciona perfeitamente mesmo em conexões de internet instáveis e dispositivos mais antigos, exatamente o que precisávamos. Sua atenção às diretrizes de acessibilidade garantiu que nossa plataforma seja utilizável por todos, incluindo pessoas com deficiências. O mais impressionante foi sua dedicação em entender as necessidades específicas do nosso público-alvo, resultando em uma solução verdadeiramente impactante. Graças ao seu trabalho, já conseguimos alcançar mais de 500 estudantes que antes não tinham acesso à educação de qualidade.",
-    verified: true,
-    highlight: "Funciona perfeitamente mesmo em conexões instáveis!",
-  },
-  {
-    id: 6,
-    name: "Lucas Oliveira",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-    role: "Empreendedor",
-    company: "FitLife App",
-    date: "Outubro 2023",
-    rating: 5,
-    project: "Aplicativo de Fitness",
-    review:
-      "Wallison transformou minha ideia de aplicativo de fitness em uma realidade que excedeu minhas expectativas. Desde o início, ele demonstrou um entendimento profundo não apenas da parte técnica, mas também das necessidades dos usuários de fitness. O aplicativo que ele desenvolveu tem uma interface limpa e intuitiva, carrega rapidamente e sincroniza perfeitamente com dispositivos wearables. Os usuários adoram a experiência fluida e as animações sutis que tornam o uso do app mais agradável. Além disso, sua implementação de análises detalhadas nos permite melhorar continuamente com base em dados reais. Wallison não é apenas um desenvolvedor talentoso, mas um verdadeiro parceiro de negócios.",
-    verified: true,
-    highlight: "Transformou minha ideia em uma realidade excepcional!",
-  },
+    highlight: "Migração XCP-ng com 100% de uptime!",
+    tech: ["XCP-ng", "Virtualização", "Debian Linux", "Backups"]
+  }
 ]
 
 export default function ClientReviews() {
   const [currentReview, setCurrentReview] = useState(0)
   const [autoplay, setAutoplay] = useState(true)
-  const autoplayRef = useRef(null)
-  const reviewsRef = useRef(null)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null)
+  const reviewsRef = useRef<HTMLDivElement | null>(null)
+
+  // Captura o movimento do mouse para efeito parallax holográfico
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!reviewsRef.current) return
+    const rect = reviewsRef.current.getBoundingClientRect()
+    setMousePosition({
+      x: e.clientX - rect.left - rect.width / 2,
+      y: e.clientY - rect.top - rect.height / 2,
+    })
+  }
 
   // Função para navegar entre as avaliações
-  const navigateReview = (direction) => {
+  const navigateReview = (direction: "next" | "prev") => {
     setAutoplay(false) // Pausa o autoplay quando o usuário interage
 
     if (direction === "next") {
@@ -134,7 +121,7 @@ export default function ClientReviews() {
     }
 
     // Reinicia o autoplay após 30 segundos de inatividade
-    clearTimeout(autoplayRef.current)
+    if (autoplayRef.current) clearTimeout(autoplayRef.current)
     autoplayRef.current = setTimeout(() => setAutoplay(true), 30000)
   }
 
@@ -149,147 +136,199 @@ export default function ClientReviews() {
     }
   }, [autoplay])
 
-  // Renderiza as estrelas com animação sequencial
-  const renderStars = (rating, size = "md") => {
+  // Renderiza as estrelas
+  const renderStars = (rating: number, size: "sm" | "md" | "lg" = "md") => {
     return (
-      <div className="flex">
+      <div className="flex gap-0.5">
         {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.1, duration: 0.3 }}
-          >
-            <GoldStar filled={i < rating} size={size} />
-          </motion.div>
+          <GoldStar key={i} filled={i < rating} size={size} />
         ))}
       </div>
     )
   }
 
   return (
-    <section className="py-20 px-4" id="reviews" ref={reviewsRef}>
-      <div className="max-w-6xl mx-auto">
+    <section 
+      className="py-24 px-4 relative overflow-hidden" 
+      id="reviews" 
+      ref={reviewsRef}
+      onMouseMove={handleMouseMove}
+    >
+      {/* Background Cyber / Surreal Elements */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(17,24,39,0.85),rgba(3,7,18,1))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(18,24,38,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(18,24,38,0.05)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
+
+      {/* Floating Hologram Orbs */}
+      <motion.div 
+        className="absolute w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[120px] pointer-events-none"
+        animate={{
+          x: mousePosition.x * 0.1,
+          y: mousePosition.y * 0.1,
+        }}
+        transition={{ type: "spring", stiffness: 50, damping: 20 }}
+        style={{ left: '10%', top: '20%' }}
+      />
+      <motion.div 
+        className="absolute w-[350px] h-[350px] rounded-full bg-violet-600/5 blur-[100px] pointer-events-none"
+        animate={{
+          x: mousePosition.x * -0.1,
+          y: mousePosition.y * -0.1,
+        }}
+        transition={{ type: "spring", stiffness: 50, damping: 20 }}
+        style={{ right: '15%', bottom: '20%' }}
+      />
+
+      {/* Floating Cyber Icons in background */}
+      <div className="absolute inset-0 pointer-events-none opacity-10">
+        <motion.div
+          animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-[8%] top-[15%] text-cyan-500"
+        >
+          <Shield className="w-10 h-10" />
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute right-[8%] top-[25%] text-violet-500"
+        >
+          <Network className="w-12 h-12" />
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, -10, 0], rotate: [0, 15, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute left-[12%] bottom-[15%] text-purple-500"
+        >
+          <Cpu className="w-8 h-8" />
+        </motion.div>
+      </div>
+
+      <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-yellow-600">
-            O Que Meus Clientes Dizem
+          <Badge className="mb-3 bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 px-3 py-1 font-mono uppercase tracking-wider text-xs">
+            Feedback & Avaliações
+          </Badge>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-500">
+            O Que Clientes e Gestores Dizem
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Confira o feedback de clientes reais que confiaram em mim para seus projetos de desenvolvimento web.
+          <p className="text-gray-400 max-w-2xl mx-auto text-base">
+            Depoimentos de profissionais reais que validaram minhas soluções de infraestrutura segura, virtualização e automação NetDevOps.
           </p>
         </motion.div>
 
         <div className="relative">
-          {/* Navegação do carrossel */}
-          <div className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-5 z-10 hidden md:block">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => navigateReview("prev")}
-              className="rounded-full bg-gray-900/50 backdrop-blur-sm hover:bg-gray-800 text-white shadow-lg"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </Button>
-          </div>
+          {/* Holographic Glowing card border */}
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition-opacity duration-1000" />
+          
+          <Card className="bg-gray-950/75 backdrop-blur-md border border-gray-800/80 overflow-hidden shadow-2xl rounded-2xl relative">
+            {/* Scanline Effect */}
+            <div className="absolute inset-0 bg-scanlines pointer-events-none opacity-[0.03]" />
+            
+            {/* Hologram Grid Accent */}
+            <div className="absolute top-0 right-0 w-24 h-24 border-r border-t border-cyan-500/30 rounded-tr-2xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-24 h-24 border-l border-b border-violet-500/30 rounded-bl-2xl pointer-events-none" />
 
-          <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-5 z-10 hidden md:block">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => navigateReview("next")}
-              className="rounded-full bg-gray-900/50 backdrop-blur-sm hover:bg-gray-800 text-white shadow-lg"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </Button>
-          </div>
-
-          {/* Carrossel de avaliações */}
-          <Card className="bg-gray-900/70 backdrop-blur-sm border-gray-800 overflow-hidden shadow-xl">
             <CardContent className="p-0">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentReview}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
+                  initial={{ opacity: 0, scale: 0.98, y: 5 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.98, y: -5 }}
+                  transition={{ duration: 0.4 }}
                   className="p-8 md:p-12"
                 >
-                  <div className="flex flex-col md:flex-row gap-8">
+                  <div className="flex flex-col md:flex-row gap-10 items-stretch">
                     {/* Informações do cliente */}
-                    <div className="md:w-1/3 flex flex-col items-center md:items-start">
-                      <Avatar className="h-20 w-20 border-2 border-amber-500/50 shadow-lg shadow-amber-500/20">
-                        <AvatarImage
-                          src={clientReviews[currentReview].avatar}
-                          alt={clientReviews[currentReview].name}
-                        />
-                        <AvatarFallback>{clientReviews[currentReview].name.charAt(0)}</AvatarFallback>
-                      </Avatar>
+                    <div className="md:w-5/12 flex flex-col justify-between border-b md:border-b-0 md:border-r border-gray-800/80 pb-6 md:pb-0 md:pr-10">
+                      <div>
+                        <div className="flex items-center gap-4">
+                          <div className="relative">
+                            {/* Ring Glow */}
+                            <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-cyan-500 to-violet-500 blur-sm opacity-60" />
+                            <Avatar className="h-16 w-16 border-2 border-cyan-400 relative z-10">
+                              <AvatarImage
+                                src={clientReviews[currentReview].avatar}
+                                alt={clientReviews[currentReview].name}
+                                className="object-cover"
+                              />
+                              <AvatarFallback className="bg-gray-800 text-cyan-400 text-lg font-bold">
+                                {clientReviews[currentReview].name.charAt(0)}
+                              </AvatarFallback>
+                            </Avatar>
+                          </div>
 
-                      <div className="mt-4 text-center md:text-left">
-                        <h3 className="text-xl font-semibold text-white">{clientReviews[currentReview].name}</h3>
-                        <p className="text-amber-400 text-sm">{clientReviews[currentReview].role}</p>
-                        <p className="text-gray-400 text-sm">{clientReviews[currentReview].company}</p>
-
-                        <div className="flex items-center gap-2 mt-2 justify-center md:justify-start">
-                          {renderStars(clientReviews[currentReview].rating)}
+                          <div>
+                            <h3 className="text-lg font-bold text-white tracking-wide">{clientReviews[currentReview].name}</h3>
+                            <p className="text-cyan-400 text-xs font-mono font-medium">{clientReviews[currentReview].role}</p>
+                            <p className="text-gray-400 text-xs font-semibold">{clientReviews[currentReview].company}</p>
+                          </div>
                         </div>
 
-                        <div className="flex flex-col gap-1 mt-3">
-                          <div className="flex items-center gap-1 text-gray-400 text-xs">
-                            <Calendar className="h-3 w-3" />
+                        <div className="mt-6 space-y-2.5">
+                          <div className="flex items-center gap-2 text-gray-400 text-xs font-mono">
+                            <Calendar className="h-3.5 w-3.5 text-cyan-500" />
                             <span>{clientReviews[currentReview].date}</span>
                           </div>
 
-                          <div className="flex items-center gap-1 text-gray-400 text-xs">
-                            <Briefcase className="h-3 w-3" />
-                            <span>{clientReviews[currentReview].project}</span>
+                          <div className="flex items-center gap-2 text-gray-400 text-xs font-mono">
+                            <Briefcase className="h-3.5 w-3.5 text-violet-500" />
+                            <span className="truncate max-w-[250px]">{clientReviews[currentReview].project}</span>
                           </div>
 
                           {clientReviews[currentReview].verified && (
-                            <div className="flex items-center gap-1 text-green-400 text-xs mt-1">
-                              <CheckCircle className="h-3 w-3" />
-                              <span>Cliente verificado</span>
+                            <div className="flex items-center gap-1.5 text-emerald-400 text-xs font-mono mt-1">
+                              <CheckCircle className="h-3.5 w-3.5" />
+                              <span>Feedback Validado</span>
                             </div>
                           )}
                         </div>
                       </div>
 
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.3, duration: 0.5 }}
-                        className="mt-4"
-                      >
+                      <div className="mt-8">
                         <Badge
                           variant="outline"
-                          className="bg-amber-500/10 text-amber-400 border-amber-500/30 px-3 py-1"
+                          className="bg-cyan-500/5 text-cyan-300 border-cyan-500/20 px-3.5 py-1.5 rounded-lg text-xs font-semibold font-mono tracking-wide w-full justify-center text-center shadow-[inset_0_1px_15px_rgba(6,182,212,0.05)]"
                         >
                           "{clientReviews[currentReview].highlight}"
                         </Badge>
-                      </motion.div>
+                      </div>
                     </div>
 
                     {/* Conteúdo da avaliação */}
-                    <div className="md:w-2/3 relative">
-                      <Quote className="absolute top-0 left-0 h-8 w-8 text-amber-500/20 -translate-x-2 -translate-y-2" />
+                    <div className="md:w-7/12 flex flex-col justify-between pt-2 md:pt-0">
+                      <div className="relative">
+                        <Quote className="absolute -top-4 -left-2 h-10 w-10 text-cyan-500/10 pointer-events-none" />
+                        
+                        <div className="flex gap-1.5 mb-5">
+                          {renderStars(clientReviews[currentReview].rating)}
+                        </div>
 
-                      <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2, duration: 0.5 }}
-                        className="text-gray-300 leading-relaxed relative z-10 pl-6 pt-4"
-                      >
-                        {clientReviews[currentReview].review}
-                      </motion.p>
+                        <p className="text-gray-300 leading-relaxed text-sm md:text-base relative z-10 pl-2">
+                          {clientReviews[currentReview].review}
+                        </p>
+                      </div>
 
-                      <Quote className="absolute bottom-0 right-0 h-8 w-8 text-amber-500/20 translate-x-2 translate-y-2 rotate-180" />
+                      {/* Tech Badges */}
+                      <div className="mt-8 pt-6 border-t border-gray-900/60">
+                        <p className="text-[10px] uppercase font-bold tracking-wider text-gray-500 font-mono mb-2">Tecnologias Envolvidas</p>
+                        <div className="flex flex-wrap gap-2">
+                          {clientReviews[currentReview].tech.map((t, idx) => (
+                            <Badge 
+                              key={idx} 
+                              className="bg-gray-900 hover:bg-gray-800 text-gray-400 border border-gray-800/80 px-2 py-0.5 rounded font-mono text-[10px]"
+                            >
+                              {t}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -297,92 +336,87 @@ export default function ClientReviews() {
             </CardContent>
           </Card>
 
-          {/* Indicadores de navegação */}
-          <div className="flex justify-center mt-8 gap-2">
-            {clientReviews.map((_, index) => (
-              <motion.button
-                key={index}
-                className={`w-2.5 h-2.5 rounded-full ${index === currentReview ? "bg-amber-500" : "bg-gray-600"}`}
-                onClick={() => {
-                  setCurrentReview(index)
-                  setAutoplay(false)
-                  clearTimeout(autoplayRef.current)
-                  autoplayRef.current = setTimeout(() => setAutoplay(true), 30000)
-                }}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-                animate={
-                  index === currentReview
-                    ? {
-                        scale: [1, 1.2, 1],
-                        transition: { duration: 1.5, repeat: Number.POSITIVE_INFINITY, repeatType: "loop" },
-                      }
-                    : {}
-                }
-              />
-            ))}
+          {/* Console Style Navigation buttons */}
+          <div className="flex justify-between items-center mt-6">
+            {/* Indicadores de navegação (Dots) */}
+            <div className="flex gap-2.5">
+              {clientReviews.map((_, index) => (
+                <button
+                  key={index}
+                  className={`w-5 h-1 rounded-full transition-all duration-300 ${index === currentReview ? "bg-cyan-400 w-8 shadow-[0_0_10px_rgba(34,211,238,0.5)]" : "bg-gray-800 hover:bg-gray-700"}`}
+                  onClick={() => {
+                    setCurrentReview(index)
+                    setAutoplay(false)
+                    if (autoplayRef.current) clearTimeout(autoplayRef.current)
+                    autoplayRef.current = setTimeout(() => setAutoplay(true), 30000)
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Arrow Nav Buttons */}
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => navigateReview("prev")}
+                className="h-9 w-9 rounded-lg border-gray-800 bg-gray-950/80 text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 shadow-md backdrop-blur-sm transition-all"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => navigateReview("next")}
+                className="h-9 w-9 rounded-lg border-gray-800 bg-gray-950/80 text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 shadow-md backdrop-blur-sm transition-all"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </Button>
+            </div>
           </div>
         </div>
 
-        {/* Resumo de avaliações */}
+        {/* Resumo de avaliações - Glassmorphism metrics */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6"
         >
-          <Card className="bg-gray-900/70 backdrop-blur-sm border-gray-800 overflow-hidden">
-            <CardContent className="p-6 flex flex-col items-center text-center">
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 300, damping: 10 }}
-                className="mb-4 bg-amber-500/10 p-3 rounded-full"
-              >
-                <Star className="h-8 w-8 text-amber-400" />
-              </motion.div>
-
-              <h3 className="text-2xl font-bold text-white mb-1">5.0</h3>
-              <div className="flex mb-2">{renderStars(5, "lg")}</div>
-              <p className="text-gray-400 text-sm">Avaliação média de 20+ clientes</p>
+          <Card className="bg-gray-950/40 backdrop-blur-sm border border-gray-900 shadow-xl overflow-hidden hover:border-cyan-500/20 transition-colors duration-500">
+            <CardContent className="p-6 flex items-center gap-4">
+              <div className="bg-cyan-500/10 p-3 rounded-xl border border-cyan-500/20 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                <Star className="h-6 w-6" />
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-white mb-0.5">5.0 / 5.0</h4>
+                <p className="text-gray-400 text-xs font-medium">Avaliação média de satisfação</p>
+              </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900/70 backdrop-blur-sm border-gray-800 overflow-hidden">
-            <CardContent className="p-6 flex flex-col items-center text-center">
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 300, damping: 10, delay: 0.1 }}
-                className="mb-4 bg-green-500/10 p-3 rounded-full"
-              >
-                <CheckCircle className="h-8 w-8 text-green-400" />
-              </motion.div>
-
-              <h3 className="text-2xl font-bold text-white mb-1">100%</h3>
-              <p className="text-gray-300 mb-2">Projetos entregues no prazo</p>
-              <p className="text-gray-400 text-sm">Compromisso com prazos e qualidade</p>
+          <Card className="bg-gray-950/40 backdrop-blur-sm border border-gray-900 shadow-xl overflow-hidden hover:border-violet-500/20 transition-colors duration-500">
+            <CardContent className="p-6 flex items-center gap-4">
+              <div className="bg-violet-500/10 p-3 rounded-xl border border-violet-500/20 text-violet-400 shadow-[0_0_15px_rgba(139,92,246,0.1)]">
+                <CheckCircle className="h-6 w-6" />
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-white mb-0.5">100%</h4>
+                <p className="text-gray-400 text-xs font-medium">SLA e Prazos Cumpridos</p>
+              </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900/70 backdrop-blur-sm border-gray-800 overflow-hidden">
-            <CardContent className="p-6 flex flex-col items-center text-center">
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 300, damping: 10, delay: 0.2 }}
-                className="mb-4 bg-blue-500/10 p-3 rounded-full"
-              >
-                <Quote className="h-8 w-8 text-blue-400" />
-              </motion.div>
-
-              <h3 className="text-2xl font-bold text-white mb-1">25+</h3>
-              <p className="text-gray-300 mb-2">Depoimentos positivos</p>
-              <p className="text-gray-400 text-sm">De clientes satisfeitos em diversos setores</p>
+          <Card className="bg-gray-950/40 backdrop-blur-sm border border-gray-900 shadow-xl overflow-hidden hover:border-purple-500/20 transition-colors duration-500">
+            <CardContent className="p-6 flex items-center gap-4">
+              <div className="bg-purple-500/10 p-3 rounded-xl border border-purple-500/20 text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.1)]">
+                <Cpu className="h-6 w-6" />
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-white mb-0.5">25+</h4>
+                <p className="text-gray-400 text-xs font-medium">Automações Ativas em Produção</p>
+              </div>
             </CardContent>
           </Card>
         </motion.div>
@@ -390,4 +424,3 @@ export default function ClientReviews() {
     </section>
   )
 }
-
