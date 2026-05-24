@@ -98,9 +98,14 @@ export default function CyberHologram() {
   ])
 
   const consoleEndRef = useRef<HTMLDivElement>(null)
+  const isFirstRender = useRef(true)
 
   // Auto-scroll terminal lines
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
     consoleEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [cliLines])
 
