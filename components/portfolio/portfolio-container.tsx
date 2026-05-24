@@ -10,6 +10,7 @@ import BioSection from "@/components/portfolio/bio-section"
 import FeedbackSection from "@/components/portfolio/feedback-section"
 import ClientReviews from "@/components/portfolio/client-reviews"
 import ChatBot from "@/components/chat/chat-bot"
+import CyberHologram from "@/components/portfolio/cyber-hologram"
 
 // Memoize static components
 const MemoizedSkillsGrid = memo(SkillsGrid)
@@ -18,6 +19,7 @@ const MemoizedBioSection = memo(BioSection)
 const MemoizedFeedbackSection = memo(FeedbackSection)
 const MemoizedClientReviews = memo(ClientReviews)
 const MemoizedChatBot = memo(ChatBot)
+const MemoizedCyberHologram = memo(CyberHologram)
 
 export default function PortfolioContainer() {
   const { scrollY } = useScroll()
@@ -201,55 +203,75 @@ export default function PortfolioContainer() {
         )}
       </AnimatePresence>
 
-      <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
+      <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
         {/* Glow neon no fundo do Hero para design premium */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none -z-10 animate-pulse-subtle" />
-        <div className="absolute top-1/3 left-1/4 w-[200px] h-[200px] bg-purple-500/5 rounded-full blur-[80px] pointer-events-none -z-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse-subtle" />
+        <div className="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none -z-10" />
 
-        <motion.div style={{ opacity, y }} className="text-center z-10 px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600"
-          >
-            Wallison Araujo
-          </motion.h1>
+        <div className="max-w-6xl mx-auto w-full px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center z-10">
+          <motion.div style={{ opacity, y }} className="md:col-span-7 text-center md:text-left space-y-6">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600"
+            >
+              Wallison Araujo
+            </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="text-xl md:text-2xl mb-8 text-gray-300 font-medium tracking-wide"
-          >
-            Desenvolvedor de Software | Infraestrutura & Redes | Cibersegurança
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="text-xl sm:text-2xl text-gray-300 font-medium tracking-wide"
+            >
+              Desenvolvedor de Software | Infraestrutura & Redes | Cibersegurança
+            </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="flex gap-4 justify-center"
-          >
-            <SocialButton
-              href="https://github.com/WallisonWS"
-              icon={Github}
-              bgColor="bg-[#24292e] hover:bg-[#2f363d] transition-colors"
-            />
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="text-sm sm:text-base text-gray-400 max-w-lg leading-relaxed"
+            >
+              Especialista em arquitetura Zero Trust, switches Aruba, firewalls FortiGate e automação NetDevOps, integrando desenvolvimento de software moderno para gerenciar e blindar redes corporativas de alto desempenho.
+            </motion.p>
 
-            <SocialButton
-              href="https://linkedin.com/in/wallisonaraujo"
-              icon={Linkedin}
-              bgColor="bg-[#0a66c2] hover:bg-[#004182] transition-colors"
-            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="flex gap-4 justify-center md:justify-start pt-2"
+            >
+              <SocialButton
+                href="https://github.com/WallisonWS"
+                icon={Github}
+                bgColor="bg-[#24292e] hover:bg-[#2f363d] transition-colors"
+              />
 
-            <SocialButton
-              href="mailto:wallisonoficial85@gmail.com"
-              icon={Mail}
-              bgColor="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-colors"
-            />
+              <SocialButton
+                href="https://linkedin.com/in/wallisonaraujo"
+                icon={Linkedin}
+                bgColor="bg-[#0a66c2] hover:bg-[#004182] transition-colors"
+              />
+
+              <SocialButton
+                href="mailto:wallisonoficial85@gmail.com"
+                icon={Mail}
+                bgColor="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-colors"
+              />
+            </motion.div>
           </motion.div>
-        </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.4, type: "spring" }}
+            className="md:col-span-5 flex justify-center w-full"
+          >
+            <MemoizedCyberHologram />
+          </motion.div>
+        </div>
 
         <motion.div
           animate={{ y: [0, 10, 0] }}
