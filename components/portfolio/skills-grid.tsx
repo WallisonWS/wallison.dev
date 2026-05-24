@@ -3,7 +3,8 @@
 import { useState, useCallback, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
-// Otimizado para melhor desempenho - menos animações complexasconst skills = [
+// Otimizado para melhor desempenho - menos animações complexas
+const skills = [
   {
     name: "FortiGate",
     icon: "https://www.vectorlogo.zone/logos/fortinet/fortinet-icon.svg",
