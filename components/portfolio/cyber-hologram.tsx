@@ -55,6 +55,18 @@ const MatrixRain = () => {
 export default function CyberHologram() {
   const containerRef = useRef<HTMLDivElement>(null)
   const terminalInputRef = useRef<HTMLInputElement>(null)
+
+  // Framer Motion spring values for smooth 3D tilt
+  const x = useMotionValue(0)
+  const y = useMotionValue(0)
+
+  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 })
+  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 })
+
+  // Transform coordinates to rotation degrees
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["15deg", "-15deg"])
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"])
+
   const [hovered, setHovered] = useState(false)
   const [shieldPulse, setShieldPulse] = useState(false)
   const [matrixActive, setMatrixActive] = useState(false)
@@ -187,17 +199,6 @@ export default function CyberHologram() {
       executeCommand("threats")
     }
   }
-
-  // Framer Motion spring values for smooth 3D tilt
-  const x = useMotionValue(0)
-  const y = useMotionValue(0)
-
-  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 })
-  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 })
-
-  // Transform coordinates to rotation degrees
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["15deg", "-15deg"])
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"])
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current || overTerminal || terminalFocused) return
