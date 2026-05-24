@@ -202,23 +202,27 @@ export default function PortfolioContainer() {
       </AnimatePresence>
 
       <section id="home" className="min-h-screen flex items-center justify-center relative pt-20">
+        {/* Glow neon no fundo do Hero para design premium */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none -z-10 animate-pulse-subtle" />
+        <div className="absolute top-1/3 left-1/4 w-[200px] h-[200px] bg-purple-500/5 rounded-full blur-[80px] pointer-events-none -z-10" />
+
         <motion.div style={{ opacity, y }} className="text-center z-10 px-4">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+            className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600"
           >
-            Wallison Pereira
+            Wallison Araujo
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-xl md:text-2xl mb-8 text-gray-300"
+            className="text-xl md:text-2xl mb-8 text-gray-300 font-medium tracking-wide"
           >
-            Desenvolvedor Full Stack Junior
+            Desenvolvedor de Software | Infraestrutura & Redes | Cibersegurança
           </motion.p>
 
           <motion.div
@@ -228,19 +232,19 @@ export default function PortfolioContainer() {
             className="flex gap-4 justify-center"
           >
             <SocialButton
-              href="https://github.com/seuusername"
+              href="https://github.com/WallisonWS"
               icon={Github}
               bgColor="bg-[#24292e] hover:bg-[#2f363d] transition-colors"
             />
 
             <SocialButton
-              href="https://linkedin.com/in/seuusername"
+              href="https://linkedin.com/in/wallisonaraujo"
               icon={Linkedin}
               bgColor="bg-[#0a66c2] hover:bg-[#004182] transition-colors"
             />
 
             <SocialButton
-              href="mailto:wallisonpereiradev@gmail.com"
+              href="mailto:wallisonoficial85@gmail.com"
               icon={Mail}
               bgColor="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-colors"
             />

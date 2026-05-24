@@ -201,7 +201,7 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
           >
-            Wallison Pereira
+            Wallison Araujo
           </motion.h1>
 
           <motion.p
@@ -210,7 +210,7 @@ export default function Portfolio() {
             transition={{ delay: 0.3 }}
             className="text-xl md:text-2xl mb-8 text-gray-300"
           >
-            Desenvolvedor Full Stack Junior
+            Desenvolvedor de Software | Infraestrutura & Redes | Cibersegurança
           </motion.p>
 
           <motion.div
@@ -220,19 +220,19 @@ export default function Portfolio() {
             className="flex gap-4 justify-center"
           >
             <SocialButton
-              href="https://github.com/seuusername"
+              href="https://github.com/WallisonWS"
               icon={Github}
               bgColor="bg-[#24292e] hover:bg-[#2f363d] transition-colors"
             />
 
             <SocialButton
-              href="https://linkedin.com/in/seuusername"
+              href="https://linkedin.com/in/wallisonaraujo"
               icon={Linkedin}
               bgColor="bg-[#0a66c2] hover:bg-[#004182] transition-colors"
             />
 
             <SocialButton
-              href="mailto:contato@wallison.dev"
+              href="mailto:wallisonoficial85@gmail.com"
               icon={Mail}
               bgColor="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-colors"
             />
