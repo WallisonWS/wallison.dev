@@ -21,7 +21,6 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-  optimizeFonts: true,
   // Cache Google Fonts
   headers: async () => {
     return [

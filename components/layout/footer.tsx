@@ -8,9 +8,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { name: "GitHub", icon: Github, href: "https://github.com/seuusername" },
-    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/seuusername" },
-    { name: "Email", icon: Mail, href: "mailto:wallisonpereiradev@gmail.com" },
+    { name: "GitHub", icon: Github, href: "https://github.com/WallisonWS" },
+    { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/wallisonaraujo" },
+    { name: "Email", icon: Mail, href: "mailto:wallisonoficial85@gmail.com" },
   ]
 
   const footerLinks = [
@@ -40,8 +40,7 @@ export function Footer() {
                 </h3>
               </Link>
               <p className="mt-2 text-neutral-400 max-w-md">
-                Desenvolvedor Full Stack Junior especializado em criar experiências digitais modernas, responsivas e
-                intuitivas.
+                Administrador de TI / Redes e Desenvolvedor especializado em infraestrutura segura, cibersegurança, automação (NetDevOps) e sistemas.
               </p>
             </motion.div>
 
@@ -97,21 +96,21 @@ export function Footer() {
                 <li className="flex items-start">
                   <Mail className="w-5 h-5 text-primary-400 mt-0.5 mr-2" />
                   <a
-                    href="mailto:wallisonpereiradev@gmail.com"
+                    href="mailto:wallisonoficial85@gmail.com"
                     className="text-neutral-400 hover:text-primary-400 transition-colors"
                   >
-                    wallisonpereiradev@gmail.com
+                    wallisonoficial85@gmail.com
                   </a>
                 </li>
                 <li className="flex items-start">
                   <Linkedin className="w-5 h-5 text-primary-400 mt-0.5 mr-2" />
                   <a
-                    href="https://linkedin.com/in/seuusername"
+                    href="https://linkedin.com/in/wallisonaraujo"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-neutral-400 hover:text-primary-400 transition-colors flex items-center"
                   >
-                    linkedin.com/in/seuusername
+                    linkedin.com/in/wallisonaraujo
                     <ExternalLink className="w-3 h-3 ml-1" />
                   </a>
                 </li>
@@ -127,7 +126,7 @@ export function Footer() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="border-t border-neutral-800 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center"
         >
-          <p className="text-neutral-500 text-sm">© {currentYear} Wallison Pereira. Todos os direitos reservados.</p>
+          <p className="text-neutral-500 text-sm">© {currentYear} Wallison Araujo. Todos os direitos reservados.</p>
           <p className="text-neutral-500 text-sm mt-2 sm:mt-0">
             Desenvolvido com <span className="text-accent-500">♥</span> e Next.js
           </p>

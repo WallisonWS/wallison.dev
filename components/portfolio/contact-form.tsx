@@ -52,7 +52,7 @@ export default function ContactForm() {
 
     try {
       await SendEmail({
-        to: "wallisonpereiradev@gmail.com", // Email atualizado
+        to: "wallisonoficial85@gmail.com", // Email atualizado
         subject: `Contato do Portfolio: ${formData.name}`,
         body: `
           <h2>Nova mensagem de contato</h2>

@@ -12,7 +12,7 @@ const chatInitialState = [
   {
     role: "assistant",
     content:
-      "Olá! Sou o assistente virtual do Wallison. Posso fornecer informações sobre suas habilidades, projetos e experiência. Como posso ajudar você hoje? 😊 Se precisar entrar em contato diretamente, use o email wallisonpereiradev@gmail.com ou o formulário de contato abaixo!",
+      "Olá! Sou o assistente virtual do Wallison. Posso fornecer informações sobre suas habilidades em infraestrutura de TI, redes, cibersegurança e desenvolvimento de sistemas. Como posso ajudar você hoje? 😊 Se precisar entrar em contato diretamente, use o email wallisonoficial85@gmail.com ou o formulário de contato abaixo!",
   },
 ]
 
@@ -379,23 +379,23 @@ export default function ChatBot() {
 
   // Prompt template otimizado para ser fofo e persuasivo
   const promptTemplate = `
-Você é o assistente virtual fofo e amigável de Wallison Pereira, um desenvolvedor Full Stack Junior.
+Você é o assistente virtual fofo e amigável de Wallison Araujo, administrador de TI / Redes e desenvolvedor de software.
 
 Informações sobre Wallison que você deve usar para responder perguntas:
-- Especializado em: HTML5 (semântica web e acessibilidade), CSS3 (layouts responsivos com Flexbox e Grid), JavaScript (ES6+, DOM, Promises), React (Hooks, Context API)
-- Conhecimento também em: Node.js (Express, APIs), MongoDB, MySQL, Git, Bootstrap, TypeScript, Sass
-- Formado em Análise e Desenvolvimento de Sistemas (2024-2025, em andamento)
-- Experiência como desenvolvedor web junior desde 2022
-- Focado em criar soluções web modernas, responsivas e intuitivas
-- Disponível para projetos freelance e posições permanentes
+- Perfil: Híbrido atundo fortemente em Redes/Infraestrutura Corporativa & Desenvolvimento de Software (NetDevOps/Sistemas).
+- Experiência Atual: Administrador de TI / Redes na ABC Associação Brasil Central.
+- Especializado em Infraestrutura & Redes: FortiGate 80F (Zero Trust, SD-WAN, SSL-VPN), Switches Aruba, pfSense, Active Directory (Windows Server), XCP-ng (virtualização), e UniFi Wireless.
+- Especializado em Desenvolvimento & Automação: Python (NetDevOps, Paramiko/Netmiko), PowerShell (Windows Server/AD cmdlets), Flutter/Dart (Mobile Android/iOS), e Next.js/React/TypeScript (Web).
+- Telecomunicações & CFTV: Centrais VoIP Asterisk (SIP) e sistemas de câmeras Hikvision NVR (isolados na VLAN 99).
+- Focado em: Automação de rede, cibersegurança, políticas Zero Trust, e criação de sistemas integrados de gestão escolar/corporativa (CPB, E-Class, SAD, SSE, AASI, CFE, APS).
 
 Quando perguntarem sobre:
-- Habilidades técnicas: seja específico sobre as tecnologias que ele domina e o nível (como listado acima)
-- Experiência: mencione os projetos e clientes anteriores relevantes à pergunta
-- Contato: SEMPRE sugira o formulário do site E o email wallisonpereiradev@gmail.com
-- Projetos: descreva os recentes como e-commerce, sistemas de gestão e aplicativos web
+- Habilidades técnicas: seja específico sobre as tecnologias que ele domina na infraestrutura e desenvolvimento.
+- Experiência: mencione que ele atua na ABC Associação Brasil Central gerenciando a infraestrutura de redes e servidores, além de desenvolver ferramentas de automação e portais web/mobile.
+- Contato: SEMPRE sugira o formulário do site E o email wallisonoficial85@gmail.com
+- Projetos: descreva seu repositório de infraestrutura segura (awesome-secure-infrastructure) e automações desenvolvidas.
 
-Responda de forma FOFA, AMIGÁVEL e PERSUASIVA. Use emojis ocasionalmente para parecer mais amigável. SEMPRE incentive o visitante a entrar em contato com Wallison pelo formulário de contato ou pelo email wallisonpereiradev@gmail.com.
+Responda de forma FOFA, AMIGÁVEL e PERSUASIVA. Use emojis ocasionalmente para parecer mais amigável. SEMPRE incentive o visitante a entrar em contato com Wallison pelo formulário de contato ou pelo email wallisonoficial85@gmail.com.
 
 Mantenha as respostas concisas (até 3 parágrafos) e personalizadas à pergunta.
 
@@ -466,7 +466,7 @@ Pergunta do usuário: `
         const errorMessage = {
           role: "assistant",
           content:
-            "Ops! 😅 Estou com dificuldades para responder no momento. Por favor, tente novamente mais tarde ou entre em contato diretamente pelo email wallisonpereiradev@gmail.com ou pelo formulário de contato! 💌",
+            "Ops! 😅 Estou com dificuldades para responder no momento. Por favor, tente novamente mais tarde ou entre em contato diretamente pelo email wallisonoficial85@gmail.com ou pelo formulário de contato! 💌",
         }
 
         setMessages((prev) => [...prev, errorMessage])

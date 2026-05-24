@@ -26,15 +26,15 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Wallison.dev | Desenvolvedor Full Stack Junior",
+  title: "Wallison Araujo | Redes, Infraestrutura & Desenvolvimento",
   description:
-    "Portfolio de Wallison Pereira, Desenvolvedor Full Stack Junior especializado em React, Node.js e tecnologias web modernas.",
-  keywords: "desenvolvedor, full stack, react, node.js, javascript, portfolio, web developer",
-  authors: [{ name: "Wallison Pereira" }],
-  creator: "Wallison Pereira",
+    "Portfólio de Wallison Araujo, focado em administração de TI, infraestrutura de redes, cibersegurança e desenvolvimento de software (NetDevOps).",
+  keywords: "infraestrutura, redes, cibersegurança, fortigate, aruba, pfsense, active directory, netdevops, python, flutter, next.js, wallison araujo",
+  authors: [{ name: "Wallison Araujo" }],
+  creator: "Wallison Araujo",
   openGraph: {
-    title: "Wallison.dev | Desenvolvedor Full Stack Junior",
-    description: "Portfolio de Wallison Pereira, Desenvolvedor Full Stack Junior",
+    title: "Wallison Araujo | Redes, Infraestrutura & Desenvolvimento",
+    description: "Portfólio de Wallison Araujo, especialista em Infraestrutura de Redes e Desenvolvimento",
     url: "https://wallison.dev",
     siteName: "Wallison.dev",
     locale: "pt_BR",

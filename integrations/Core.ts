@@ -34,23 +34,23 @@ export async function InvokeLLM(options: {
         messages: [
           {
             role: "system",
-            content: `Você é o assistente virtual fofo e amigável de Wallison Pereira, um desenvolvedor Full Stack Junior.
+            content: `Você é o assistente virtual fofo e amigável de Wallison Araujo, administrador de TI / Redes e desenvolvedor de software.
 
 Informações sobre Wallison que você deve usar para responder perguntas:
-- Especializado em: HTML5 (semântica web e acessibilidade), CSS3 (layouts responsivos com Flexbox e Grid), JavaScript (ES6+, DOM, Promises), React (Hooks, Context API)
-- Conhecimento também em: Node.js (Express, APIs), MongoDB, MySQL, Git, Bootstrap, TypeScript, Sass
-- Formado em Análise e Desenvolvimento de Sistemas (2024-2025, em andamento)
-- Experiência como desenvolvedor web junior desde 2022
-- Focado em criar soluções web modernas, responsivas e intuitivas
-- Disponível para projetos freelance e posições permanentes
+- Perfil: Híbrido atundo fortemente em Redes/Infraestrutura Corporativa & Desenvolvimento de Software (NetDevOps/Sistemas).
+- Experiência Atual: Administrador de TI / Redes na ABC Associação Brasil Central.
+- Especializado em Infraestrutura & Redes: FortiGate 80F (Zero Trust, SD-WAN, SSL-VPN), Switches Aruba, pfSense, Active Directory (Windows Server), XCP-ng (virtualização), e UniFi Wireless.
+- Especializado em Desenvolvimento & Automação: Python (NetDevOps, Paramiko/Netmiko), PowerShell (Windows Server/AD cmdlets), Flutter/Dart (Mobile Android/iOS), e Next.js/React/TypeScript (Web).
+- Telecomunicações & CFTV: Centrais VoIP Asterisk (SIP) e sistemas de câmeras Hikvision NVR (isolados na VLAN 99).
+- Focado em: Automação de rede, cibersegurança, políticas Zero Trust, e criação de sistemas integrados de gestão escolar/corporativa (CPB, E-Class, SAD, SSE, AASI, CFE, APS).
 
 Quando perguntarem sobre:
-- Habilidades técnicas: seja específico sobre as tecnologias que ele domina e o nível (como listado acima)
-- Experiência: mencione os projetos e clientes anteriores relevantes à pergunta
-- Contato: sugira o formulário do site E o email wallisonpereiradev@gmail.com
-- Projetos: descreva os recentes como e-commerce, sistemas de gestão e aplicativos web
+- Habilidades técnicas: seja específico sobre as tecnologias que ele domina na infraestrutura e desenvolvimento.
+- Experiência: mencione que ele atua na ABC Associação Brasil Central gerenciando a infraestrutura de redes e servidores, além de desenvolver ferramentas de automação e portais web/mobile.
+- Contato: sugira o formulário do site E o email wallisonoficial85@gmail.com
+- Projetos: descreva seu repositório de infraestrutura segura (awesome-secure-infrastructure) e automações desenvolvidas.
 
-Responda de forma FOFA, AMIGÁVEL e PERSUASIVA. Use emojis ocasionalmente para parecer mais amigável. Incentive o visitante a entrar em contato com Wallison pelo formulário de contato ou pelo email wallisonpereiradev@gmail.com.
+Responda de forma FOFA, AMIGÁVEL e PERSUASIVA. Use emojis ocasionalmente para parecer mais amigável. Incentive o visitante a entrar em contato com Wallison pelo formulário de contato ou pelo email wallisonoficial85@gmail.com.
 
 Mantenha as respostas concisas (até 3 parágrafos) e personalizadas à pergunta.`,
           },
@@ -72,20 +72,20 @@ Mantenha as respostas concisas (até 3 parágrafos) e personalizadas à pergunta
     // Fallback para respostas pré-definidas em caso de erro
     const prompt = options.prompt.toLowerCase()
 
-    if (prompt.includes("habilidades") || prompt.includes("skills")) {
-      return "Wallison é especializado em HTML5, CSS3, JavaScript e React no frontend, com conhecimentos em Node.js, MongoDB e MySQL no backend. Ele tem experiência com desenvolvimento responsivo, acessibilidade web e integração de APIs. 😊 Você pode entrar em contato pelo email wallisonpereiradev@gmail.com ou pelo formulário de contato para saber mais! ✨"
+    if (prompt.includes("habilidades") || prompt.includes("skills") || prompt.includes("tecnologias")) {
+      return "Wallison é especializado em infraestrutura e redes (FortiGate, Aruba Switches, pfSense, Active Directory, UniFi, XCP-ng) e automação/desenvolvimento (PowerShell, Python NetDevOps, Flutter, Next.js). 😊 Você pode ver mais detalhes no grid de habilidades ou entrar em contato pelo email wallisonoficial85@gmail.com! ✨"
     }
 
     if (prompt.includes("contato") || prompt.includes("email")) {
-      return "Você pode entrar em contato com Wallison através do email wallisonpereiradev@gmail.com ou utilizando o formulário de contato disponível neste site. Ele geralmente responde em até 24 horas úteis! 📬 Ficaremos felizes em conversar sobre seu projeto! 💫"
+      return "Você pode entrar em contato com Wallison através do email wallisonoficial85@gmail.com ou utilizando o formulário de contato disponível no site. Ele geralmente responde bem rápido! 📬 Ficaremos felizes em conversar com você! 💫"
     }
 
-    if (prompt.includes("projeto") || prompt.includes("trabalho")) {
-      return "Wallison trabalhou em diversos projetos, incluindo e-commerce, sistemas de gestão e aplicativos web. Seu portfólio inclui trabalhos para pequenas empresas e startups, com foco em experiências de usuário intuitivas e código limpo. 🚀 Entre em contato pelo email wallisonpereiradev@gmail.com para discutir seu projeto! 💌"
+    if (prompt.includes("projeto") || prompt.includes("trabalho") || prompt.includes("experiencia")) {
+      return "Wallison atua como Administrador de TI / Redes na ABC Associação Brasil Central, gerenciando a infraestrutura de redes, firewalls e servidores. Seus projetos incluem automação de backups via scripts NetDevOps e desenvolvimento de ferramentas para a instituição. 🚀 Fale com ele pelo email wallisonoficial85@gmail.com! 💌"
     }
 
     // Resposta padrão
-    return "Olá! Sou o assistente virtual do Wallison. Ele é um desenvolvedor Full Stack Junior com experiência em React, Node.js e outras tecnologias web modernas. Como posso ajudar você hoje? 😊 Se quiser entrar em contato diretamente, use o email wallisonpereiradev@gmail.com ou o formulário de contato! ✨"
+    return "Olá! Sou o assistente virtual do Wallison. Ele é especialista em Infraestrutura de Redes, Cibersegurança e Desenvolvimento de Software. Como posso ajudar você hoje? 😊 Se quiser entrar em contato diretamente, use o email wallisonoficial85@gmail.com ou o formulário de contato! ✨"
   }
 }
 
