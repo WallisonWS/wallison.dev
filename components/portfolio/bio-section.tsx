@@ -12,6 +12,8 @@ import {
   Heart,
   Coffee,
   MapPin,
+  Shield,
+  Network,
 } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -48,14 +50,11 @@ export default function BioSection() {
                 </div>
 
                 <p className="text-gray-300 mb-5 leading-relaxed">
-                  Olá! Sou um desenvolvedor Full Stack Junior apaixonado por criar aplicações web modernas e
-                  responsivas. Minha jornada na programação começou com a curiosidade sobre como a tecnologia pode
-                  transformar ideias em realidade.
+                  Olá! Sou um profissional de tecnologia com perfil híbrido, atuando no **desenvolvimento de sistemas modernos (Web/Mobile)** e na administração de **infraestrutura de redes, servidores e cibersegurança**.
                 </p>
 
                 <p className="text-gray-300 mb-5 leading-relaxed">
-                  Busco constantemente expandir meu conhecimento técnico e habilidades de resolução de problemas.
-                  Acredito que o código limpo e bem estruturado é a base para criar experiências digitais excepcionais.
+                  Trabalho focado no conceito de **Zero Trust**, garantindo o isolamento correto de VLANs (como CFTV e IoT), gerenciamento de switches Aruba, redes UniFi e firewalls FortiGate/pfSense. Ao mesmo tempo, crio aplicativos robustos em Flutter e interfaces web elegantes com Next.js e React.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mt-6">
@@ -105,7 +104,7 @@ export default function BioSection() {
                       <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
                         Análise e Desenvolvimento de Sistemas
                       </p>
-                      <p className="text-xs text-gray-500 italic">Universidade Tecnológica</p>
+                      <p className="text-xs text-gray-500 italic">Ensino Superior de Tecnologia</p>
                     </div>
                   </div>
 
@@ -113,11 +112,11 @@ export default function BioSection() {
                     <div className="w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500 rounded-full absolute -ml-6 mt-1 h-12"></div>
                     <Calendar className="h-4 w-4 text-purple-400 mr-2 mt-1 flex-shrink-0 group-hover:text-purple-300 transition-colors" />
                     <div>
-                      <p className="font-medium text-gray-300 group-hover:text-white transition-colors">2023</p>
+                      <p className="font-medium text-gray-300 group-hover:text-white transition-colors">2023 - 2024</p>
                       <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-                        Bootcamp Web Development
+                        Certificações & Cursos de Especialização em Redes
                       </p>
-                      <p className="text-xs text-gray-500 italic">Digital Innovation One</p>
+                      <p className="text-xs text-gray-500 italic">Fortinet Training, pfSense, CISCO CCNA</p>
                     </div>
                   </div>
                 </div>
@@ -144,9 +143,9 @@ export default function BioSection() {
                         2022 - Presente
                       </p>
                       <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-                        Desenvolvedor Web Junior
+                        Administrador de TI / Redes
                       </p>
-                      <p className="text-xs text-gray-500 italic">TechSolutions</p>
+                      <p className="text-xs text-gray-500 italic">ABC Associação Brasil Central</p>
                     </div>
                   </div>
 
@@ -154,11 +153,11 @@ export default function BioSection() {
                     <div className="w-1 h-full bg-gradient-to-b from-teal-500 to-emerald-500 rounded-full absolute -ml-6 mt-1 h-12"></div>
                     <Calendar className="h-4 w-4 text-teal-400 mr-2 mt-1 flex-shrink-0 group-hover:text-teal-300 transition-colors" />
                     <div>
-                      <p className="font-medium text-gray-300 group-hover:text-white transition-colors">2021 - 2022</p>
+                      <p className="font-medium text-gray-300 group-hover:text-white transition-colors">2021 - Presente</p>
                       <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-                        Estágio em Desenvolvimento
+                        Desenvolvedor Web & Mobile (Freelancer)
                       </p>
-                      <p className="text-xs text-gray-500 italic">StartupXYZ</p>
+                      <p className="text-xs text-gray-500 italic">Projetos Pessoais & Clientes</p>
                     </div>
                   </div>
                 </div>
@@ -180,7 +179,7 @@ export default function BioSection() {
                 <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full group-hover:bg-blue-500/30 transition-all"></div>
                 <Code className="h-8 w-8 text-blue-400 mb-3 relative z-10 group-hover:text-blue-300" />
               </div>
-              <h3 className="text-center font-medium text-gray-300 group-hover:text-white">Frontend</h3>
+              <h3 className="text-center font-medium text-gray-300 group-hover:text-white">Software Dev</h3>
             </CardContent>
           </Card>
 
@@ -188,19 +187,19 @@ export default function BioSection() {
             <CardContent className="flex flex-col items-center justify-center p-5">
               <div className="relative">
                 <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-full group-hover:bg-green-500/30 transition-all"></div>
-                <Server className="h-8 w-8 text-green-400 mb-3 relative z-10 group-hover:text-green-300" />
+                <Network className="h-8 w-8 text-green-400 mb-3 relative z-10 group-hover:text-green-300" />
               </div>
-              <h3 className="text-center font-medium text-gray-300 group-hover:text-white">Backend</h3>
+              <h3 className="text-center font-medium text-gray-300 group-hover:text-white">Redes & Switches</h3>
             </CardContent>
           </Card>
 
-          <Card className="bg-gray-900/70 backdrop-blur-sm border-none shadow-lg transition-all duration-300 hover:shadow-purple-500/20 hover:translate-y-[-5px] group overflow-hidden">
+          <Card className="bg-gray-900/70 backdrop-blur-sm border-none shadow-lg transition-all duration-300 hover:shadow-red-500/20 hover:translate-y-[-5px] group overflow-hidden">
             <CardContent className="flex flex-col items-center justify-center p-5">
               <div className="relative">
-                <div className="absolute inset-0 bg-purple-500/20 blur-xl rounded-full group-hover:bg-purple-500/30 transition-all"></div>
-                <Database className="h-8 w-8 text-purple-400 mb-3 relative z-10 group-hover:text-purple-300" />
+                <div className="absolute inset-0 bg-red-500/20 blur-xl rounded-full group-hover:bg-red-500/30 transition-all"></div>
+                <Shield className="h-8 w-8 text-red-400 mb-3 relative z-10 group-hover:text-red-300" />
               </div>
-              <h3 className="text-center font-medium text-gray-300 group-hover:text-white">Banco de Dados</h3>
+              <h3 className="text-center font-medium text-gray-300 group-hover:text-white">Cibersegurança</h3>
             </CardContent>
           </Card>
 
@@ -208,9 +207,9 @@ export default function BioSection() {
             <CardContent className="flex flex-col items-center justify-center p-5">
               <div className="relative">
                 <div className="absolute inset-0 bg-amber-500/20 blur-xl rounded-full group-hover:bg-amber-500/30 transition-all"></div>
-                <Globe className="h-8 w-8 text-amber-400 mb-3 relative z-10 group-hover:text-amber-300" />
+                <Server className="h-8 w-8 text-amber-400 mb-3 relative z-10 group-hover:text-amber-300" />
               </div>
-              <h3 className="text-center font-medium text-gray-300 group-hover:text-white">Web Design</h3>
+              <h3 className="text-center font-medium text-gray-300 group-hover:text-white">Servidores & Cloud</h3>
             </CardContent>
           </Card>
         </motion.div>
