@@ -60,11 +60,20 @@ export default function CyberHologram() {
   const [matrixActive, setMatrixActive] = useState(false)
   const [terminalInput, setTerminalInput] = useState("")
   const [terminalFocused, setTerminalFocused] = useState(false)
+  const [overTerminal, setOverTerminal] = useState(false)
   const [activeTab, setActiveTab] = useState(0)
 
   const focusTerminal = () => {
     terminalInputRef.current?.focus()
   }
+
+  // Smoothly return card to flat state when typing or hovering the console card
+  useEffect(() => {
+    if (overTerminal || terminalFocused) {
+      x.set(0)
+      y.set(0)
+    }
+  }, [overTerminal, terminalFocused, x, y])
   
   // Terminal console lines history
   const [cliLines, setCliLines] = useState<string[]>([
@@ -191,7 +200,7 @@ export default function CyberHologram() {
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"])
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return
+    if (!containerRef.current || overTerminal || terminalFocused) return
     const rect = containerRef.current.getBoundingClientRect()
     const width = rect.width
     const height = rect.height
@@ -204,8 +213,10 @@ export default function CyberHologram() {
 
   const handleMouseLeave = () => {
     setHovered(false)
-    x.set(0)
-    y.set(0)
+    if (!overTerminal && !terminalFocused) {
+      x.set(0)
+      y.set(0)
+    }
   }
 
   return (
@@ -439,6 +450,14 @@ export default function CyberHologram() {
 
           {/* Layer 7: Interactive Terminal Output Window (Z: 100px) */}
           <motion.div
+            onMouseEnter={() => setOverTerminal(true)}
+            onMouseLeave={() => setOverTerminal(false)}
+            onMouseDown={(e) => {
+              // Prevent focus loss/blur from the input when clicking anywhere else on the card
+              if (e.target !== terminalInputRef.current) {
+                e.preventDefault()
+              }
+            }}
             onClick={(e) => {
               e.stopPropagation()
               focusTerminal()
@@ -454,8 +473,7 @@ export default function CyberHologram() {
               transform: "translateZ(100px) translateY(105px)",
               boxShadow: terminalFocused 
                 ? "0 20px 40px rgba(0,0,0,0.6), 0 0 20px rgba(34,211,238,0.3)" 
-                : "0 20px 40px rgba(0,0,0,0.6), 0 0 15px rgba(59,130,246,0.15)",
-              cursor: "text"
+                : "0 20px 40px rgba(0,0,0,0.6), 0 0 15px rgba(59,130,246,0.15)"
             }}
             animate={{ y: [0, -4, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
@@ -510,8 +528,9 @@ export default function CyberHologram() {
                 onKeyDown={handleKeyDown}
                 onFocus={() => setTerminalFocused(true)}
                 onBlur={() => setTerminalFocused(false)}
+                onClick={(e) => e.stopPropagation()}
                 placeholder="digite help, status, matrix..."
-                className="bg-transparent border-none text-[8px] font-mono text-white placeholder-gray-600 focus:outline-none focus:ring-0 flex-1 w-full pl-0.5"
+                className="bg-transparent border-none text-[8px] font-mono text-white placeholder-gray-600 focus:outline-none focus:ring-0 flex-1 w-full pl-0.5 cursor-text"
               />
               <button 
                 onClick={(e) => {
