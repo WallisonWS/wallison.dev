@@ -26,6 +26,22 @@ export default function PortfolioContainer() {
   const [activeSection, setActiveSection] = useState("home")
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+  // Force scroll to top on mount and disable browser scroll restoration
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual"
+      }
+      window.scrollTo(0, 0)
+      
+      // Tiny delay to catch late layout shifts
+      const timeoutId = setTimeout(() => {
+        window.scrollTo(0, 0)
+      }, 50)
+      return () => clearTimeout(timeoutId)
+    }
+  }, [])
+
   // Optimize scroll handler with debounce
   useEffect(() => {
     let requestId
