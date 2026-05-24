@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import SkillsGrid from "@/components/portfolio/skills-grid"
 import ContactForm from "@/components/portfolio/contact-form"
 import BioSection from "@/components/portfolio/bio-section"
-import FeedbackSection from "@/components/portfolio/feedback-section"
 import ClientReviews from "@/components/portfolio/client-reviews"
 import ChatBot from "@/components/chat/chat-bot"
 import CyberHologram from "@/components/portfolio/cyber-hologram"
@@ -16,7 +15,6 @@ import CyberHologram from "@/components/portfolio/cyber-hologram"
 const MemoizedSkillsGrid = memo(SkillsGrid)
 const MemoizedContactForm = memo(ContactForm)
 const MemoizedBioSection = memo(BioSection)
-const MemoizedFeedbackSection = memo(FeedbackSection)
 const MemoizedClientReviews = memo(ClientReviews)
 const MemoizedChatBot = memo(ChatBot)
 const MemoizedCyberHologram = memo(CyberHologram)
@@ -316,8 +314,7 @@ export default function PortfolioContainer() {
       {/* Client Reviews Section */}
       <MemoizedClientReviews />
 
-      {/* Feedback Section */}
-      <MemoizedFeedbackSection />
+
 
       <section id="contact" className="py-20 px-4 bg-gray-900/30">
         <div className="max-w-4xl mx-auto">

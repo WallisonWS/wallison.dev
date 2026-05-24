@@ -150,7 +150,7 @@ export default function ClientReviews() {
   return (
     <section 
       className="py-24 px-4 relative overflow-hidden" 
-      id="reviews" 
+      id="feedback" 
       ref={reviewsRef}
       onMouseMove={handleMouseMove}
     >
