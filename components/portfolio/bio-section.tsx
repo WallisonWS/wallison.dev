@@ -50,11 +50,15 @@ export default function BioSection() {
                 </div>
 
                 <p className="text-gray-300 mb-5 leading-relaxed">
-                  Olá! Sou um profissional de tecnologia com perfil híbrido, atuando no **desenvolvimento de sistemas modernos (Web/Mobile)** e na administração de **infraestrutura de redes, servidores e cibersegurança**.
+                  Olá! Sou o Wallison Araujo, profissional de TI com perfil júnior e híbrido, atuando tanto na administração prática de **infraestrutura de redes, servidores e cibersegurança** quanto no **desenvolvimento de sistemas (Web/Mobile)**.
                 </p>
 
                 <p className="text-gray-300 mb-5 leading-relaxed">
-                  Trabalho focado no conceito de **Zero Trust**, garantindo o isolamento correto de VLANs (como CFTV e IoT), gerenciamento de switches Aruba, redes UniFi e firewalls FortiGate/pfSense. Ao mesmo tempo, crio aplicativos robustos em Flutter e interfaces web elegantes com Next.js e React.
+                  Atualmente trabalho como **Assistente de Informática / Técnico de TI** na *ABC Associação Brasil Central*. No meu dia a dia, gerencio ativamente equipamentos de redes e segurança física e virtual (switches Aruba, firewalls FortiGate/pfSense sob o conceito de **Zero Trust**, redes UniFi e servidores de virtualização XCP-ng).
+                </p>
+
+                <p className="text-gray-300 mb-5 leading-relaxed">
+                  Também sou encarregado pela operação de sistemas corporativos/escolares integrados (CPB, E-Class, SAD, SSE, AASI, CFE, APS, etc.) e pela documentação centralizada de infraestrutura no **Obsidian**, aplicando automações com scripts Python e PowerShell.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mt-6">
@@ -95,11 +99,25 @@ export default function BioSection() {
 
                 <div className="ml-12">
                   <div className="flex items-start mb-4 group">
-                    <div className="w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500 rounded-full absolute -ml-6 mt-1 h-12"></div>
+                    <div className="w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500 rounded-full absolute -ml-6 mt-1 h-[70px]"></div>
                     <Calendar className="h-4 w-4 text-purple-400 mr-2 mt-1 flex-shrink-0 group-hover:text-purple-300 transition-colors" />
                     <div>
                       <p className="font-medium text-gray-300 group-hover:text-white transition-colors">
-                        2024 - 2025 <span className="text-purple-400">(Em andamento)</span>
+                        2026 - Presente <span className="text-purple-400">(Em andamento)</span>
+                      </p>
+                      <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+                        Bacharelado em Engenharia da Computação
+                      </p>
+                      <p className="text-xs text-gray-500 italic">Ensino Superior / Graduação</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start mb-4 group">
+                    <div className="w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500 rounded-full absolute -ml-6 mt-1 h-[70px]"></div>
+                    <Calendar className="h-4 w-4 text-purple-400 mr-2 mt-1 flex-shrink-0 group-hover:text-purple-300 transition-colors" />
+                    <div>
+                      <p className="font-medium text-gray-300 group-hover:text-white transition-colors">
+                        2024 - 2025 <span className="text-emerald-400 font-semibold">(Concluído)</span>
                       </p>
                       <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
                         Análise e Desenvolvimento de Sistemas
@@ -109,7 +127,7 @@ export default function BioSection() {
                   </div>
 
                   <div className="flex items-start group">
-                    <div className="w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500 rounded-full absolute -ml-6 mt-1 h-12"></div>
+                    <div className="w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500 rounded-full absolute -ml-6 mt-1 h-[60px]"></div>
                     <Calendar className="h-4 w-4 text-purple-400 mr-2 mt-1 flex-shrink-0 group-hover:text-purple-300 transition-colors" />
                     <div>
                       <p className="font-medium text-gray-300 group-hover:text-white transition-colors">2023 - 2024</p>
@@ -136,28 +154,31 @@ export default function BioSection() {
 
                 <div className="ml-12">
                   <div className="flex items-start mb-4 group">
-                    <div className="w-1 h-full bg-gradient-to-b from-teal-500 to-emerald-500 rounded-full absolute -ml-6 mt-1 h-12"></div>
+                    <div className="w-1 h-full bg-gradient-to-b from-teal-500 to-emerald-500 rounded-full absolute -ml-6 mt-1 h-[160px]"></div>
                     <Calendar className="h-4 w-4 text-teal-400 mr-2 mt-1 flex-shrink-0 group-hover:text-teal-300 transition-colors" />
                     <div>
                       <p className="font-medium text-gray-300 group-hover:text-white transition-colors">
                         2022 - Presente
                       </p>
-                      <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-                        Administrador de TI / Redes
+                      <p className="text-sm text-gray-200 group-hover:text-white transition-colors font-semibold">
+                        Assistente de Informática (Reg. Carteira) / Técnico de TI & Redes
                       </p>
-                      <p className="text-xs text-gray-500 italic">ABC Associação Brasil Central</p>
+                      <p className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors leading-relaxed mt-1">
+                        Embora registrado oficialmente como Assistente de Informática, atuo como profissional de TI responsável por toda a infraestrutura de redes e servidores locais. Opero switches Aruba, firewalls FortiGate/pfSense, virtualização XCP-ng, Active Directory e VoIP Asterisk. Realizo a gestão diária de sistemas integrados (CPB, E-Class, SAD, SSE, AASI, CFE, APS) documentados no Obsidian.
+                      </p>
+                      <p className="text-[10px] text-teal-400 font-mono mt-1">ABC Associação Brasil Central</p>
                     </div>
                   </div>
 
                   <div className="flex items-start group">
-                    <div className="w-1 h-full bg-gradient-to-b from-teal-500 to-emerald-500 rounded-full absolute -ml-6 mt-1 h-12"></div>
+                    <div className="w-1 h-full bg-gradient-to-b from-teal-500 to-emerald-500 rounded-full absolute -ml-6 mt-1 h-[70px]"></div>
                     <Calendar className="h-4 w-4 text-teal-400 mr-2 mt-1 flex-shrink-0 group-hover:text-teal-300 transition-colors" />
                     <div>
                       <p className="font-medium text-gray-300 group-hover:text-white transition-colors">2021 - Presente</p>
                       <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-                        Desenvolvedor Web & Mobile (Freelancer)
+                        Desenvolvedor Web & Mobile (Freelancer - Nível Júnior)
                       </p>
-                      <p className="text-xs text-gray-500 italic">Projetos Pessoais & Clientes</p>
+                      <p className="text-xs text-gray-500 italic">Projetos Pessoais & Soluções Customizadas</p>
                     </div>
                   </div>
                 </div>

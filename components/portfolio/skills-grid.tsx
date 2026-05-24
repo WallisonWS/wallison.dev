@@ -107,6 +107,16 @@ const skills = [
     },
   },
   {
+    name: "Linux",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+    color: "#FCC624",
+    proficiency: "Avançado",
+    description: "Administração de servidores Linux (Debian, Ubuntu Server), gerência de pacotes, serviços de rede e automação de scripts shell.",
+    animation: {
+      hover: { scale: 1.06, rotateX: 8, rotateY: -8, translateZ: 15 },
+    },
+  },
+  {
     name: "UniFi Wireless",
     icon: UniFiIcon,
     color: "#005FFF",
